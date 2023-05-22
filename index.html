@@ -5,48 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>NW Coding Quiz Challenge!</h1>
+        <h2>Ready to test your knowledge of all things HTML, CSS, and JavaScript? Press the "Start Quiz" button for code related questions. You'll be able to track your high scores and compare your attempts once you've finished the challenge!</h2>
     </header>
     <h2 id="word"></h2>
     <section>
-        <button id="hover">Start Quiz</button>
+        <button class="button">Start Quiz</button>
     </section>
-    
-    <div class = "container">
-        <h2>What is the purpose of a CSS file?</h2>
-            <section class = "question-box">
-                <button id = "hover">A. To ensure that your webpage functions properly on the backend</button>
-                <button id = "hover">B. To show the content of the webpage in text format</button>
-                <button id = "hover">C. To make the webpage look "pretty"</button>
-                <button id = "hover">D. All of the above</button>
-            </section>
-    </div>
-    <div class = "container">
-        <h2>What is the purpose of a CSS file?</h2>
-            <section class = "question-box">
-                <button id = "hover">A. To ensure that your webpage functions properly on the backend</button>
-                <button id = "hover">B. To show the content of the webpage in text format</button>
-                <button id = "hover">C. To make the webpage look "pretty"</button>
-                <button id = "hover">D. All of the above</button>
-            </section>
-    </div>
-    <div class = "container">
-        <h2>What is the purpose of a CSS file?</h2>
-            <section class = "question-box">
-                <button id = "hover">A. To ensure that your webpage functions properly on the backend</button>
-                <button id = "hover">B. To show the content of the webpage in text format</button>
-                <button id = "hover">C. To make the webpage look "pretty"</button>
-                <button id = "hover">D. All of the above</button>
-            </section>
+    <div id="questions">
+
     </div>
     <div id = "next">
-        <button id = "hover">Next Question</button>
+        <button class = "button">Next Question</button>
     </div>
-    <div id = "stats">
+    <div id = "highscore">
         Wins: <span  id="wins">0</span> 
         Losses: <span  id="losses">0</span> 
        <span  id="timer">Timer</span> 

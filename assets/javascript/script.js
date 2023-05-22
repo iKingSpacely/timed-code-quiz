@@ -1,59 +1,52 @@
-// alert("working")
 
-var startBtn = document.getElementById("start");
-var timer = document.getElementById("timer");
-var h2El = document.getElementById("word");
-var count = 5;
-var wordsList = ["javascript", "objects"]
-var randWordArr;
-var randWord;
-var _Arr = [];
-var wins = 0;
-var losses = 0;
 
-startBtn.addEventListener("click", function (e) {
-    // alert("click working");
-    randomWord();
-    var gameTimer = setInterval(function () {
-        count--;
-        timer.textContent = count;
 
-        if (count <= 0) {
-            clearInterval(gameTimer)
-            h2El.textContent = "Game Over"
-            if(randWordArr.join("") === _Arr.join("") ){
-                wins++
-                localStorage.setItem("wins", wins)
-            }else{
-                losses++
-            }
 
-        }
-    }, 1000)
-})
 
-function randomWord () {
-     randWord = wordsList[Math.floor(Math.random()*wordsList.length)]
-    console.log(randWord);
-     randWordArr = randWord.split("");
-    for (var i = 0; i < randWordArr.length; i++) {
-       _Arr.push('_')
-        
+
+var quiz = [{
+    question1: "Where can you make your webpage or app look aesthetically pleasing?",
+    option1: ["index.html", "script.js", "sylte.css", "all of the above" ],
+    correctAnswer1: "all of the above",
+
+},{
+    question2: "What does the following logical operator mean: ||",
+    option2: ["AND", "NOT", "OR", "none of the above"],
+    correctAnswer2:"OR",
+},{
+    question3: "What does 'Hoisting' mean?",
+    option3: ["is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their method, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the bottom of their scope, before their execution","is the process where the interpreter moves the declaration of only classes to the top of their scope, before their execution"],
+    correctAnswer3:"is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution",
+},{
+    question4: "What does CSS stand for? ",
+    option4: ["Concatenating Service Sheet", "Collaborating Style Sheets", "Cascading Style Sheet", "Central Style Sheet"],
+    correctAnswer4:"Cascading Style Sheet",
+}];
+
+var startButtonEl = $('#button');
+
+startButtonEl.on('click', function(){
+    alert('Beginning Quiz Challenge!')
+
+
+
+
+});
+
+var count = 15;
+var interval = setInterval(function(){
+    document.getElementById('timer').innerHTML=count;
+    count--;
+    if (count <= 0){
+        clearInterval(interval);
+    
+        document.getElementById('timer').innerHTML='Done';
+            alert("You're out of time! Better luck next time!")
     }
-    console.log(_Arr);
-    var randWordToDisplay = _Arr.join(" ");
-    h2El.textContent =  _Arr.join(" ");
-}
+}, 1000);
 
-document.addEventListener("keyup",function(e){
-    console.log(e.key, randWordArr);
-    for (let i = 0; i < randWordArr.length; i++) {
-        if(e.key === randWordArr[i])
-        {
-            _Arr[i] = e.key;
-        }
-        
-    }
-    h2El.textContent =  _Arr.join(" ");
 
-})
+
+
+
+
