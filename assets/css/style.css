@@ -51,6 +51,10 @@ section {
     margin-top: 12px; 
 }
 
+.container {
+    display: block; 
+}
+
 .button {
     text-align: center;
     display: block;

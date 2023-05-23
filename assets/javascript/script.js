@@ -1,7 +1,10 @@
 var count;
 var interval;
+var hidden = document.querySelector(".hidden");
+
 var buttonEl = document.querySelector(".start")
     buttonEl.addEventListener('click', function(){
+        hidden.setAttribute("class", "container")
         buttonEl.classList.add("hidden")
         count = 30;
         interval = setInterval(function(){
@@ -22,7 +25,7 @@ var buttonEl = document.querySelector(".start")
         counter++;
     });
 
-var counter = 0;
+var counter = -1;
 var question1El = document.querySelector("#question1");
 
 var option1El = document.querySelector("#option1");
@@ -39,20 +42,22 @@ function nextQuestion(event){
         alert("Correct!")
     } else {
         alert("Incorrect")
+        console.log(event.target.textContent)
+        console.log(quiz[0].correctAnswer)
         count-= 5;
-    }
+    } counter++;
+
     question1El.textContent = quiz[counter].question;
     option1El.textContent = quiz[counter].option[0];
     option2El.textContent = quiz[counter].option[1];
     option3El.textContent = quiz[counter].option[2];
     option4El.textContent = quiz[counter].option[3];
-    counter++;
 }
 
 
 var quiz = [{
     question: "Where can you make your webpage or app look aesthetically pleasing?",
-    option: ["index.html", "script.js", "sylte.css", "all of the above" ],
+    option: ["index.html", "script.js", "style.css", "all of the above" ],
     correctAnswer: "all of the above",
 
 },{
