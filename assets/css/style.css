@@ -66,6 +66,10 @@ section {
     min-width: 120px;
 }
 
+.hidden {
+    display: none;
+}
+
 .button:hover {
     background-color: rgb(078,042,132);
     color: white;
