@@ -1,108 +1,15 @@
-var count;
-var interval;
-var hidden = document.querySelector(".hidden");
-
-var buttonEl = document.querySelector(".start")
-    buttonEl.addEventListener('click', function(){
-        hidden.setAttribute("class", "container")
-        buttonEl.classList.add("hidden")
-        count = 30;
-        interval = setInterval(function(){
-            count--;
-            document.getElementById('timer').innerHTML=count;
-            if (count < 0){  
-                document.getElementById('timer').innerHTML=count;
-                alert("You're out of time! Better luck next time!")
-                document.getElementById('timer').innerHTML='Done';
-                clearInterval(interval);
-            }
-        }, 1000);
-        question1El.textContent = quiz[0].question;
-        option1El.textContent = quiz[0].option[0];
-        option2El.textContent = quiz[0].option[1];
-        option3El.textContent = quiz[0].option[2];
-        option4El.textContent = quiz[0].option[3];
-        counter++;
-    });
-
-var counter = -1;
-var question1El = document.querySelector("#question1");
-
-var option1El = document.querySelector("#option1");
-    option1El.addEventListener('click', nextQuestion)
-var option2El = document.querySelector("#option2");
-    option2El.addEventListener('click', nextQuestion)
-var option3El = document.querySelector("#option3");
-    option3El.addEventListener('click', nextQuestion)
-var option4El = document.querySelector("#option4");
-    option4El.addEventListener('click', nextQuestion)
-
-function nextQuestion(event){
-    if (event.target.textContent == quiz[counter].correctAnswer) {
-        alert("Correct!")
-    } else {
-        alert("Incorrect")
-        console.log(event.target.textContent)
-        console.log(quiz[0].correctAnswer)
-        count-= 5;
-    } counter++;
-
-    question1El.textContent = quiz[counter].question;
-    option1El.textContent = quiz[counter].option[0];
-    option2El.textContent = quiz[counter].option[1];
-    option3El.textContent = quiz[counter].option[2];
-    option4El.textContent = quiz[counter].option[3];
-}
-
-
 var quiz = [{
     question: "Where can you make your webpage or app look aesthetically pleasing?",
     option: ["index.html", "script.js", "style.css", "all of the above" ],
-    correctAnswer: "all of the above",
-
-},{
-    question: "What does the following logical operator mean: ||",
-    option: ["AND", "NOT", "OR", "none of the above"],
-    correctAnswer:"OR",
-},{
-    question: "What does 'Hoisting' mean?",
-    option: ["is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their method, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the bottom of their scope, before their execution","is the process where the interpreter moves the declaration of only classes to the top of their scope, before their execution"],
-    correctAnswer:"is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution",
-},{
-    question: "What does CSS stand for? ",
-    option: ["Concatenating Service Sheet", "Collaborating Style Sheets", "Cascading Style Sheet", "Central Style Sheet"],
-    correctAnswer:"Cascading Style Sheet",
-}];
-
-
-
-
-
-
-var studentWins = document.getElementById("wins");
-var studentLosses = document.getElementById("losses")
-
-
-var stats = {
-    wins: studentWins.value,
-    losses: studentLosses.value,
-  };
+    correctAnswer: "all of the above"
+  }, {
+    question: "What is CSS used for?",
+    option: ["To add style and design to webpages", "Cranky, Sluthy, Salamanders", "Idk man, I just work here.", "example add this in later"],
+    correctAnswer: "To add style and design to webpages"
+  }, {
+    question: "What does Javascript do?",
+    option: ["It's a coffee maker, duh.", "Sir, this is a Wendy's.", "Adds functionality to websites", "example add this in later"],
+    correctAnswer: "Adds functionality to websites"
+  }];
   
-  localStorage.setItem("wins", JSON.stringify(stats));
-  renderMessage();
-  
-
-  
-  function renderMessage() {
-    var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
-    if (lastGrade !== null) {
-      document.querySelector(".message").textContent = lastGrade.student + 
-      " received a/an " + lastGrade.grade
-    }
-  };
-
-
-
-
-
-
+  let questionsIndex = 0;
