@@ -12,26 +12,26 @@ var quiz = [{
     correctAnswer: "is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution",
   }];
 
-var questionIndex = 0;
+let questionIndex = 0;
 
-var quizStartEl = document.querySelector('#quiz-start');
-var questionPageEl = document.querySelector('#question-page');
-var quizEndEl = document.querySelector('#quiz-end');
-var startBtn = document.querySelector('#start-button');
-var problemEl = document.querySelector('#problem');
-var optionEl = document.querySelector('#option');
-var timerEl = document.querySelector('#timer');
-var timer;
-var timerCount;
-var quizScore = 0;
+let quizStartEl = document.querySelector('#quiz-start');
+let questionPageEl = document.querySelector('#question-page');
+let quizEndEl = document.querySelector('#quiz-end');
+let startBtn = document.querySelector('#start-button');
+let problemEl = document.querySelector('#problem');
+let optionEl = document.querySelector('#option');
+let timerEl = document.querySelector('#timer');
+let timer;
+let timerCount;
+let quizScore = 0;
 
     quizStartEl.setAttribute('class', 'visible');
     questionPageEl.setAttribute('class', 'hidden');
     quizEndEl.setAttribute('class', 'hidden');
     timerEl.setAttribute('class', 'countdown');
 
-function beginQuiz() {
-    timerCount = 60;
+function startQuiz() {
+    timerCount = 30;
     quizStartEl.setAttribute('class', 'hidden');
     questionPageEl.setAttribute('class', 'visible');
     generateQuestions();
@@ -53,26 +53,27 @@ function beginTimer() {
     };
 
 function generateQuestions() {
-    let currentQuestion = questions[questionIndex];
+    let currentQuestion = option[questionIndex];
     problemEl.textContent = currentQuestion.problem;
     optionEl.innerHTML = "";
 };
 
 for (let i = 0; i < 4; i++) {
     let tempBtn = document.createElement("button");
-    tempBtn.textContent = currentQuestion.option[i]; 
-    tempBtn.setAttribute('class', 'problem-box'); 
-    tempBtn.setAttribute("id", currentQuestion.option[i]);
+        tempBtn.textContent = currentQuestion.option[i]; 
+        tempBtn.setAttribute('class', 'problem-box'); 
+        tempBtn.setAttribute("id", currentQuestion.option[i]);
   
     tempBtn.onclick = validateAnswer
+    optionEl.appendChild(tempBtn)
   } if (currentQuestion === 0){
     endQuiz();
   };
 
   function validateAnswer(){
-    if (this.id !== problem[questionIndex].correctAnswer) {
+    if (this.id !== questions[questionIndex].correctAnswer) {
         alert("Incorrect...");
-        subtractQuiztimer();
+        subtractQuizTimer();
     } else {
         alert("Correct!");
         quizScore += 10;
