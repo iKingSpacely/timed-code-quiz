@@ -11,5 +11,16 @@ var quiz = [{
     option: ["It's a coffee maker, duh.", "Sir, this is a Wendy's.", "Adds functionality to websites", "example add this in later"],
     correctAnswer: "Adds functionality to websites"
   }];
-  
-  let questionsIndex = 0;
+
+var questionsIndex = 0;
+
+var quizStartEl = document.querySelector('#quiz-start');
+var startQuestionEl = document.querySelector('#question-page');
+var startEndEL = document.querySelector('#quiz-end');
+var startBtn = document.querySelector('#quiz-start');
+var questionEl = document.querySelector('#question');
+var optionEl = document.querySelector('#option');
+var timerEl = document.querySelector('#timer');
+var timer;
+var timerCount;
+var quizScore = 0;
