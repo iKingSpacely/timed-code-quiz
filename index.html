@@ -5,31 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>NW Coding Quiz Challenge!</h1>
-        <h2>Ready to test your knowledge of all things HTML, CSS, and JavaScript? Press the "Start Quiz" button for code related questions. You'll be able to track your high scores and compare your attempts once you've finished the challenge!</h2>
-    </header>
-    <h2 id="word"></h2>
-    <section>
-        <button class="button start">Start Quiz</button>
-    </section>
-    <div id="questions">
-        <p id = "question1"></p>
-        <div class = "hidden">
-        <button class="button" id = "option1"></button>
-        <button class="button" id = "option2"></button>
-        <button class="button" id = "option3"></button>
-        <button class="button" id = "option4"></button>
-        </div>
+    <div id="quiz-start">
+        <h1 a="intro">NW Coding Challenge</h1>
+        <p>Ready to test your knowledge of all things HTML, CSS, and JavaScript? Press the "Start Quiz" button for code related questions. You'll be able to track your high scores and compare your attempts once you've finished the challenge!</p>
+        <button type="button" id="start-button" class="start-button"><a href="#"></a><strong></a>Start Quiz!</strong></button>
     </div>
-    <div id = "highscore">
-        Wins: <span  id="wins">0</span> 
-        Losses: <span  id="losses">0</span> 
-       <span  id="timer">Timer</span> 
+    <div id="question-screen">
+        <h2 id="title">Test</h2>
+        <div id="options"></div>
+    </div>
+    <div id="quiz-end">
+        <h2>How'd you do?</h2>
+        <input id="user-initials" type="text" placeholder="Please enter your initials">
+        <button id="initials-button">Enter your initials</button>
     </div>
     <script src = "./assets/javascript/script.js"></script>
 </body>

@@ -1,115 +1,115 @@
 :root {
-    /* margin-left: 325px;
-    margin-right: 325px; */
-    margin: 0 auto;
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
 }
 
 h1 {
-    background-color: rgb(078,042,132);
+    padding-top: 25px;
+    padding-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+
+
+.start-button {
+    background-color: blueviolet;
     color: white;
-    font-style: italic;
-    text-align: center;
-    font-size: 34px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 650px;
-    margin-right: 650px;
-    margin-top: 50px;
-    border-radius: 15px;
-    padding: 10px;
-    flex-wrap: wrap;
-
-}
-h2 {
-    text-align: center;
-    font-style: italic;
-    font-size: large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    flex-wrap: wrap;
-    margin-left: 550px;
-    margin-right: 550px;
-    
-}
-
-section {
-    text-align: center;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-top: 12px;
-}
-
-/* #hover:hover {
-    background-color: purple;
-    color: white;
-
-} */
-
-#next {
-    text-align: center;
-    margin-left: 350px;
-    margin-right: 350px;
-    margin-top: 12px; 
-}
-
-.container {
-    display: block; 
-}
-
-.button {
-    text-align: center;
-    display: block;
-    cursor: pointer;
-    background-color: rgb(191, 187, 187);
-    color: black;
-    font-size: small;
-    font-weight: bold;
-    border-radius: 15px;
-    margin: 0 auto;
-    padding: 10px;
-    min-height: 30px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    padding:15px;
+    min-height:30px; 
     min-width: 120px;
+    font-size: 20px;
+}
+
+.start-button:hover {
+    background-color: rgb(211, 211, 125);
+    transition: 0.3s;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* why isnt border or border color working for this segment? */
+.hiscores {
+    border: 3px;
+    border-color: black;
+
+}
+
+
+img {
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    z-index: -1;
 }
 
 .hidden {
     display: none;
 }
 
-.button:hover {
-    background-color: rgb(078,042,132);
-    color: white;
+.reveal {
+    display: block;
 }
 
-div {
+.question-box {
+    background-color: blueviolet;
+    display: block;
     text-align: center;
+    color: white;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    font-size: 20px;
+    
+}
+
+.question-box:hover {
+    background-color: rgb(211, 211, 125);
+    transition: 0.3s;
+}
+
+
+.countdown {
+    color: black;
+    border: none;
     margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding:15px;
+    min-height:30px; 
+    min-width: 40px;
+    font-size: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 992px) {
-
+.end-screen {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
+    font-size: 200px;
+    color: black;
 }
 
-@media screen and (max-width: 768px) {
+.countdown {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px;
+    color: black;
 }
 
-@media screen and (max-width: 576px) {
-
+.hiscores p{
+    font-size: 40px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px;
+    color: black;
 }

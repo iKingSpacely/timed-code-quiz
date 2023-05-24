@@ -79,4 +79,30 @@ var quiz = [{
 
 
 
+var studentWins = document.getElementById("wins");
+var studentLosses = document.getElementById("losses")
+
+
+var stats = {
+    wins: studentWins.value,
+    losses: studentLosses.value,
+  };
+  
+  localStorage.setItem("wins", JSON.stringify(stats));
+  renderMessage();
+  
+
+  
+  function renderMessage() {
+    var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+    if (lastGrade !== null) {
+      document.querySelector(".message").textContent = lastGrade.student + 
+      " received a/an " + lastGrade.grade
+    }
+  };
+
+
+
+
+
 
