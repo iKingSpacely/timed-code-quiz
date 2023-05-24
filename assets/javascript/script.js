@@ -12,11 +12,11 @@ var quiz = [{
     correctAnswer: "Adds functionality to websites"
   }];
 
-var questionsIndex = 0;
+var questionIndex = 0;
 
 var quizStartEl = document.querySelector('#quiz-start');
-var startQuestionEl = document.querySelector('#question-page');
-var startEndEL = document.querySelector('#quiz-end');
+var questionPageEl = document.querySelector('#question-page');
+var quizEndEl = document.querySelector('#quiz-end');
 var startBtn = document.querySelector('#quiz-start');
 var questionEl = document.querySelector('#question');
 var optionEl = document.querySelector('#option');
@@ -24,3 +24,30 @@ var timerEl = document.querySelector('#timer');
 var timer;
 var timerCount;
 var quizScore = 0;
+
+    quizStartEl.setAttribute('class', 'visible');
+    questionPageEl.setAttribute('class', 'hidden');
+    quizEndEl.setAttribute('class', 'hidden');
+    timerEl.setAttribute('class', 'countdown');
+
+function quizStart() {
+    timerCount = 60;
+    quizStartEl.setAttribute('class', 'hidden');
+    questionPageEl.setAttribute('class', 'visible');
+    beginQuestions();
+    beginTimer();
+};
+
+function beginTimer() {
+    timer = setInterval(function(){
+     timerCount--;
+     timerEl.textContent = timerCount;
+     if(timerCount <= 0) {
+        clearInterval(timer);
+        lostGame();
+     }
+    },1000);
+};
+    function lostGame() {
+        localStorage.setItem("recentScore", quizScore)
+    };

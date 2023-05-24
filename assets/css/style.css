@@ -1,0 +1,35 @@
+:root {
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
