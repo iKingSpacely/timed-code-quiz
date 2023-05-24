@@ -8,7 +8,7 @@ Take a time quiz that tests your knowledge of HTML, CSS, and JavaScript!
 - On the scores page, the user will be able to input their initials and save their scores to local storage to track their progress for each time they take the quiz
 
 ## Screenshot
-
+![](assets/images/Code-Quiz-SC.png)
 
 ## Deployed Link
 - 
