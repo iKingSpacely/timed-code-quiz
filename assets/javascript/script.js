@@ -4,12 +4,12 @@ var quiz = [{
     correctAnswer: "all of the above"
   }, {
     problem: "What is CSS used for?",
-    option: ["To add style and design to webpages", "Cranky, Sluthy, Salamanders", "Idk man, I just work here.", "example add this in later"],
-    correctAnswer: "To add style and design to webpages"
+    option: ["AND", "NOT", "OR", "none of the above"],
+    correctAnswer: "OR"
   }, {
-    problem: "What does Javascript do?",
-    option: ["It's a coffee maker, duh.", "Sir, this is a Wendy's.", "Adds functionality to websites", "example add this in later"],
-    correctAnswer: "Adds functionality to websites"
+    problem: "What does 'Hoisting' mean?",
+    option: ["is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their method, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution","is the process where the interpreter moves the declaration of classes, functions, or variables to the bottom of their scope, before their execution","is the process where the interpreter moves the declaration of only classes to the top of their scope, before their execution"],
+    correctAnswer: "is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution",
   }];
 
 var questionIndex = 0;
@@ -17,8 +17,8 @@ var questionIndex = 0;
 var quizStartEl = document.querySelector('#quiz-start');
 var questionPageEl = document.querySelector('#question-page');
 var quizEndEl = document.querySelector('#quiz-end');
-var startBtn = document.querySelector('#quiz-start');
-var problemEl = document.querySelector('#question');
+var startBtn = document.querySelector('#start-button');
+var problemEl = document.querySelector('#problem');
 var optionEl = document.querySelector('#option');
 var timerEl = document.querySelector('#timer');
 var timer;
@@ -30,11 +30,11 @@ var quizScore = 0;
     quizEndEl.setAttribute('class', 'hidden');
     timerEl.setAttribute('class', 'countdown');
 
-function quizStart() {
+function beginQuiz() {
     timerCount = 60;
     quizStartEl.setAttribute('class', 'hidden');
     questionPageEl.setAttribute('class', 'visible');
-    beginQuestions();
+    generateQuestions();
     beginTimer();
 };
 
@@ -52,36 +52,72 @@ function beginTimer() {
         localStorage.setItem("recentScore", quizScore);
     };
 
-function generateQuestion() {
+function generateQuestions() {
     let currentQuestion = questions[questionIndex];
     problemEl.textContent = currentQuestion.problem;
     optionEl.innerHTML = "";
 };
 
+for (let i = 0; i < 4; i++) {
+    let tempBtn = document.createElement("button");
+    tempBtn.textContent = currentQuestion.option[i]; 
+    tempBtn.setAttribute('class', 'problem-box'); 
+    tempBtn.setAttribute("id", currentQuestion.option[i]);
+  
+    tempBtn.onclick = validateAnswer
+  } if (currentQuestion === 0){
+    endQuiz();
+  };
 
+  function validateAnswer(){
+    if (this.id !== problem[questionIndex].correctAnswer) {
+        alert("Incorrect...");
+        subtractQuiztimer();
+    } else {
+        alert("Correct!");
+        quizScore += 10;
+    }
+    questionIndex++;
+    if (questionIndex >= problem.length) {
+        endQuiz();
+    } else {
+        generateQuestion();
+    };
+  };
 
+  function endQuiz() {
+    quizStartEl.setAttribute('class', 'hidden');
+    quizEndEl.setAttribute('class', 'reveal');
+    localStorage.setItem("recentScore", quizScore);
+    clearInterval(timer);
+  };
 
-
-
+  function subtractQuizTimer() {
+    timerCount -= 10;
+  };
 
 var startButton = document.querySelector("#start-button");
 var endButton = document.querySelector("quiz-end");
 var userInitials = document.querySelector("#user-initials");
-var initialsButton = document.querySelector("#initials-button");
+var enterButton = document.querySelector("#initials-button");
 var score = document.querySelector("#scores");
+var userInput = JSON.parse(localStorage.getItem('scores')) && [];
 
-initialsButton.addEventListener('click', function(){
-    var user = {
+enterButton.addEventListener('click', function(){
+    var Player = {
         userInitials:userInitials.value,
         score:quizScore,
-    }
+    };
 }
-)
+);
 
+userData.push(user);  
+localStorage.setItem("hiscores", JSON.stringify(userData));
 
-
-
-
-
+for (let i = 0; i < userData.length; i++) {
+  var p = document.createElement('p') 
+  p.textContent = "User: " + userInput[i].userInitials + " Score: " + userInput[i].score; 
+  score.append(p)   
+};
 
 startBtn.onclick = quizStart;
