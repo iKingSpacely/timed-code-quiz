@@ -1,4 +1,4 @@
-var quiz = [{
+var questions = [{
     problem: "Where can you make your webpage or app look aesthetically pleasing?",
     option: ["index.html", "script.js", "style.css", "all of the above" ],
     correctAnswer: "all of the above"
@@ -12,22 +12,22 @@ var quiz = [{
     correctAnswer: "is the process where the interpreter moves the declaration of classes, functions, or variables to the top of their scope, before their execution",
   }];
 
-let questionIndex = 0;
+var questionIndex = 0;
 
-let quizStartEl = document.querySelector('#quiz-start');
-let questionPageEl = document.querySelector('#question-page');
-let quizEndEl = document.querySelector('#quiz-end');
-let startBtn = document.querySelector('#start-button');
-let problemEl = document.querySelector('#problem');
-let optionEl = document.querySelector('#option');
-let timerEl = document.querySelector('#timer');
-let timer;
-let timerCount;
-let quizScore = 0;
+var startQuestionsEl = document.querySelector('#start-questions');
+var optionsPageEl = document.querySelector('#options-page');
+var endQuestionsEl = document.querySelector('#end-questions');
+var startBtn = document.querySelector('#start-button');
+var problemEl = document.querySelector('#problem');
+var optionEl = document.querySelector('#option');
+var timerEl = document.querySelector('#timer');
+var timer;
+var timerCount;
+var quizScore = 0;
 
-    quizStartEl.setAttribute('class', 'visible');
-    questionPageEl.setAttribute('class', 'hidden');
-    quizEndEl.setAttribute('class', 'hidden');
+    startQuestionsEl.setAttribute('class', 'visible');
+    optionsPageEl.setAttribute('class', 'hidden');
+    endQuestionsEl.setAttribute('class', 'hidden');
     timerEl.setAttribute('class', 'countdown');
 
 function startQuiz() {
@@ -52,15 +52,15 @@ function beginTimer() {
         localStorage.setItem("recentScore", quizScore);
     };
 
-function generateQuestions() {
-    let currentQuestion = option[questionIndex];
-    problemEl.textContent = currentQuestion.problem;
-    optionEl.innerHTML = "";
+function generateQuiz() {
+    let currentQuestion = questions[questionIndex];
+    problemEl.textContent = currentQuestion.questions;
+    optionsPageEl.innerHTML = "";
 };
 
 for (let i = 0; i < 4; i++) {
-    let tempBtn = document.createElement("button");
-        tempBtn.textContent = currentQuestion.option[i]; 
+    var tempBtn = document.createElement("button");
+        tempBtn.textContent = currentQuestion.problem[i]; 
         tempBtn.setAttribute('class', 'problem-box'); 
         tempBtn.setAttribute("id", currentQuestion.option[i]);
   
