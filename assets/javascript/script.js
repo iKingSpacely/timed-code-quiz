@@ -49,11 +49,39 @@ function beginTimer() {
     },1000);
 };
     function lostGame() {
-        localStorage.setItem("recentScore", quizScore)
+        localStorage.setItem("recentScore", quizScore);
     };
 
 function generateQuestion() {
-    let currentQuestion = questions[questionIndex]
+    let currentQuestion = questions[questionIndex];
     problemEl.textContent = currentQuestion.problem;
     optionEl.innerHTML = "";
+};
+
+
+
+
+
+
+
+var startButton = document.querySelector("#start-button");
+var endButton = document.querySelector("quiz-end");
+var userInitials = document.querySelector("#user-initials");
+var initialsButton = document.querySelector("#initials-button");
+var score = document.querySelector("#scores");
+
+initialsButton.addEventListener('click', function(){
+    var user = {
+        userInitials:userInitials.value,
+        score:quizScore,
+    }
 }
+)
+
+
+
+
+
+
+
+startBtn.onclick = quizStart;
