@@ -11,7 +11,7 @@ Take a time quiz that tests your knowledge of HTML, CSS, and JavaScript!
 ![](assets/images/Code-Quiz-SC.png)
 
 ## Deployed Link
-- 
+- https://ikingspacely.github.io/timed-code-quiz/
 
 ## Github Link
 - https://github.com/iKingSpacely/timed-code-quiz
