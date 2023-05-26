@@ -34,8 +34,8 @@ h1 {
 p {
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-
 }
+
 .scores {
     border: 3px;
     background-color: black;
@@ -48,6 +48,7 @@ p {
 .visible {
     display: block;
 }
+
 .problem-box {
     background-color: rgb(078, 042, 132);
     display: block;
@@ -60,7 +61,6 @@ p {
     min-height:30px; 
     min-width: 120px;
     font-size: 20px;
-    
 }
 
 .problem-box:hover {
